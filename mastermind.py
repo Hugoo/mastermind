@@ -15,8 +15,14 @@ class Mastermind:
 		return [self.color_dict[random.randrange(len(self.color_dict))] for x in range(colors_number)]
 
 	def is_correct_input(self, line_input):
-		#Returns true if input match this mastermind play. TODO replace 1==1 with color verification.
-		if len(line_input)==len(self.colors) and 1==1:
+		#Returns true if input match this mastermind play.
+		#TODO Improve
+		for l in line_input:
+			if l not in self.color_dict:
+				print(l+' -> wrong letter\n Colors are '+' '.join(self.color_dict))
+				return False
+
+		if len(line_input)==len(self.colors):
 			return True
 		print('Please enter a correct input ({} colors)'.format(len(self.colors)))
 		return False
