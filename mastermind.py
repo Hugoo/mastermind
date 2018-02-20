@@ -12,7 +12,7 @@ class Mastermind:
 		
 
 	def generate_colors(self, colors_number):
-		return ['R', 'O', 'O', 'J']#[self.color_dict[random.randrange(len(self.color_dict))] for x in range(colors_number)]
+		return self.color_dict[random.randrange(len(self.color_dict))] for x in range(colors_number)]
 
 	def is_correct_input(self, line_input):
 		#Returns true if input match this masterming play
